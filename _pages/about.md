@@ -16,9 +16,9 @@ Research & Intern Experience
     Internal software for VLSI physical design
   </il>
   <il><h3>2023-2024 Research Assistant at Chinese Academy of Sciences</h3>
-    LLM-based verilog generation
-    LLM for Electronic System Design Automation
-    ML-based logic synthesis
+    LLM-based verilog generation<br>
+    LLM for Electronic System Design Automation<br>
+    ML-based logic synthesis<br>
   </il>
   <il><h3>2023 Intern in X-EPIC</h3>
     Software development for formal verification
