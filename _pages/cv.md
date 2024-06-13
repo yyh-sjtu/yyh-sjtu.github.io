@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+[PDF](https://yyh-sjtu.github.io/files/Resume_of_Yunhao_Zhou.pdf "PDF")
+
 Education
 ======
 * M.S. in SJTU, 2022-2025
