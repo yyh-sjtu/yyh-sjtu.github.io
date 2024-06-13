@@ -7,9 +7,7 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
-
-[PDF](https://yyh-sjtu.github.io/files/Resume_of_Yunhao_Zhou.pdf "PDF")
+{% include base_path %} [PDF](https://yyh-sjtu.github.io/files/Resume_of_Yunhao_Zhou.pdf "PDF")
 
 Education
 ======
