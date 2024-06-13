@@ -1,7 +1,7 @@
 ---
 title: "Data is all you need: Finetuning LLMs for Chip Design via an Automated design-data augmentation framework"
 collection: publications
-permalink: /publication/2009-10-01-paper-title-number-1
+permalink: /publication/data_is_all_you_need
 date: 2024
 venue: 'DAC'
 paperurl: 'https://yyh-sjtu.github.io/files/data_is_all_you_need.pdf'
