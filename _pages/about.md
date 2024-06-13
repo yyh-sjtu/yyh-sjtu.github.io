@@ -15,7 +15,7 @@ Research & Intern Experience
   <il><h3>2024 Intern in Nvidia</h3>
     Internal software for VLSI physical design
   </il>
-  <il><h3>2023-2024 Research Assistant at Chinese Academy of Sciences</h3>
+  <il><h3>2023-2024 Research Assistant at Institute of Computing Technology, Chinese Academy of Sciences</h3>
     LLM-based verilog generation<br>
     LLM for Electronic System Design Automation<br>
     ML-based logic synthesis<br>
