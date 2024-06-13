@@ -7,19 +7,22 @@ redirect_from:
   - /about.html
 ---
 
-I have received my bachelor's degree from Huazhong University of Science and Technology in 2022. Now, I am persuing my master's degree at Shanghai Jiao Tong University. The research fields I am interested in is EDA including formal verification, AI-aided synthesis and verification, and computer architecture.
+My name is Yunhao Zhou. I have received my bachelor's degree from Huazhong University of Science and Technology(HUST) in 2022. Now, I am persuing my master's degree at Shanghai Jiao Tong University(SJTU). The research field I am interested in is Electronic Design Automation including LLM-based verilog generation, formal verification, logic synthesis and so on.
 
 Research & Intern Experience
 ======
 <ul>
-  <il><h3>Intern in Nvidia</h3>
+  <il><h3>2024 Intern in Nvidia</h3>
     Internal software for VLSI physical design
   </il>
-  <il><h3>Intern in X-EPIC</h3>
+  <il><h3>2023-2024 Research Assistant at Chinese Academy of Sciences</h3>
+    LLM-based verilog generation
+    LLM for Electronic System Design Automation
+    ML-based logic synthesis
+  </il>
+  <il><h3>2023 Intern in X-EPIC</h3>
     Software development for formal verification
   </il>
-  <il><h3>LLM aided verilog generation</h3>
-    
-  </il>
+  
 </ul>
 
