@@ -19,7 +19,7 @@ Research & Work experience
 * 2023-2024: Research Assistant
   * Institute of Computing Technology, Chinese Academy of Sciences
   * Duties includes: LLM-based verilog generation, LLM for Electronic System Design Automation, ML-based logic synthesis
-  * Supervisor: Ying Wang
+  * Supervisor: [Ying Wang](https://wangying-ict.github.io/ "Ying Wang")
 
 * 2024: Software Intern
   * Nvidia Corporation
