@@ -2,7 +2,7 @@
 title: "Data is all you need: Finetuning LLMs for Chip Design via an Automated design-data augmentation framework"
 collection: publications
 permalink: /publication/data_is_all_you_need
-date: 2024
+date: 2024-06-23
 venue: 'DAC'
 paperurl: 'https://yyh-sjtu.github.io/files/data_is_all_you_need.pdf'
 citation: 'Chang K, Wang K, Yang N, et al. Data is all you need: Finetuning LLMs for Chip Design via an Automated design-data augmentation framework[J]. arXiv preprint arXiv:2403.11202, 2024.'
