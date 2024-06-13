@@ -11,51 +11,36 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* M.S. in SJTU, 2022-2025
+* B.S. in HUST, 2022
 
-Work experience
+Research & Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* 2023-2024: Research Assistant
+  * Institute of Computing Technology, Chinese Academy of Sciences
+  * Duties includes: LLM-based verilog generation, LLM for Electronic System Design Automation, ML-based logic synthesis
+  * Supervisor: Ying Wang
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* 2024: Software Intern
+  * Nvidia Corporation
+  * Duties included: Internal software development for VLSI physical design
+  * Manager: Jiayun Zhou
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* 2023: Software Intern
+  * X-EPIC Corporation
+  * Duties included: Software development for formal verification
+  * Manager: Jun Liu
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Programing Language: C/C++, Python, TCL
+* Opensource system: ABC, Gem5
+* IC design: Verilog, Cadence virtuoso, Quartus
+* Development platform: linux
 
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
