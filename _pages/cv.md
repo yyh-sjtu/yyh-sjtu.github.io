@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Yunhao Zhou's CV [PDF](https://yyh-sjtu.github.io/files/Resume_of_Yunhao_Zhou.pdf "PDF")"
+title: "Yunhao Zhou's CV"
 permalink: /cv/
 author_profile: true
 redirect_from:
