@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-My name is Yunhao Zhou. I have received my bachelor's degree from Huazhong University of Science and Technology(HUST) in 2022. Now, I am persuing my master's degree at Shanghai Jiao Tong University(SJTU). The research field I am interested in is Electronic Design Automation including LLM-based verilog generation, formal verification, logic synthesis and so on.
+My name is Yunhao Zhou. I have received my bachelor's degree from Huazhong University of Science and Technology(HUST) in 2022. Now, I am persuing my master's degree at Shanghai Jiao Tong University(SJTU). The research field I am interested in is Electronic Design Automation including LLM-based verilog generation, formal verification, logic synthesis and so on. I am applying for Phd now.
 
 Research & Intern Experience
 ======
