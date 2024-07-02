@@ -3,7 +3,7 @@ title: "Natural language is not enough: Benchmarking multi-modal generative AI f
 collection: publications
 permalink: /publication/natural_language_is_not_enough
 date: 2024-08-10
-venue: 'Submitting to ICCAD 2024'
+venue: 'ICCAD 2024'
 paperurl: 'https://yyh-sjtu.github.io/files/natural_language_is_not_enough.pdf'
 citation: 'Chang K, Chen Z, Zhou Y, et al. Natural language is not enough: Benchmarking multi-modal generative AI for Verilog generation.'
 ---
