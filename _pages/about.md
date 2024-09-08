@@ -11,6 +11,9 @@ My name is Yunhao Zhou. I have received my bachelor's degree from Huazhong Unive
 
 Research & Intern Experience
 ======
+* 2024 Intern in National Center of Technology Innovation for EDA
+  * Verilog representation learning in CDFG domain based on GNN
+  * LLM based Verilog generation including finetune, inference, and auto-test
 * 2024 Intern in Nvidia
   * Internal software for VLSI physical design
 * 2023-2024 Research Assistant at Institute of Computing Technology, Chinese Academy of Sciences
@@ -24,6 +27,7 @@ Awards
 ======
 * 2023 First class scholarship of SJTU
 * 2022 First class scholarship of SJTU
+* **Bachelor of Honors Degree from HUST**
 * 2022 Outstanding graduate of HUST
 * 2021 American college students mathematical Contest in modeling: Meritorious Winner
 * 2020 National Mathematical Contest in Modeling for College Students: National Second Prize
