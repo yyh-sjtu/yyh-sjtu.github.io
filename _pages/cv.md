@@ -20,7 +20,7 @@ Research & Work experience
 * 2024: Research Intern
   * Institution: National Center of Technology Innovation for EDA
   * Duties: Verilog representation learning in CDFG domain based on GNN, LLM based Verilog generation
-  * Supervisor: [Qiang Xu](https://www.cse.cuhk.edu.hk/people/faculty/qiang-xu/))
+  * Supervisor: [Qiang Xu](https://www.cse.cuhk.edu.hk/people/faculty/qiang-xu/)
 * 2023-2024: Research Assistant
   * Institution: Institute of Computing Technology, Chinese Academy of Sciences
   * Duties: LLM-based verilog generation, LLM for Electronic System Design Automation, ML-based logic synthesis
