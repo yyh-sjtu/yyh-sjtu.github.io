@@ -16,7 +16,7 @@ Research & Intern Experience
   * LLM based Verilog generation including finetune, inference, and auto-test
 * 2024 Intern in Nvidia
   * Internal software for VLSI physical design
-* 2023-2024 Research Assistant at Institute of Computing Technology, Chinese Academy of Sciences
+* 2023-2024 RA at Institute of Computing Technology, Chinese Academy of Sciences
   * LLM-based verilog generation
   * LLM for Electronic System Design Automation
   * ML-based logic synthesis
