@@ -8,6 +8,7 @@ redirect_from:
 ---
 
 My name is Yunhao Zhou. I have received my bachelor's degree from Huazhong University of Science and Technology(HUST) in 2022. Now, I am persuing my master's degree at Shanghai Jiao Tong University(SJTU). The research field I am interested in is AI for EDA.
+
 Research & Intern Experience
 ======
 * 2024 Intern in National Center of Technology Innovation for EDA
