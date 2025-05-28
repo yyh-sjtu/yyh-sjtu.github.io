@@ -20,21 +20,21 @@ Research & Work experience
 * 2024: Research Intern
   * Institution: National Center of Technology Innovation for EDA
   * Duties: Verilog representation learning in CDFG domain based on GNN, LLM based Verilog generation
-  * Supervisor: [Qiang Xu](https://www.cse.cuhk.edu.hk/people/faculty/qiang-xu/)
+
 * 2023-2024: Research Assistant
   * Institution: Institute of Computing Technology, Chinese Academy of Sciences
   * Duties: LLM-based verilog generation, LLM for Electronic System Design Automation, ML-based logic synthesis
-  * Supervisor: [Ying Wang](https://wangying-ict.github.io/ "Ying Wang")
+
 
 * 2024: Software Intern
   * Institution: Nvidia Corporation
   * Duties: Internal software development for VLSI physical design
-  * Manager: Jiayun Zhou
+
 
 * 2023: Software Intern
   * Institution: X-EPIC Corporation
   * Duties: Software development for formal verification
-  * Manager: Jun Liu
+
   
 Skills
 ======
