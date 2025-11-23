@@ -15,4 +15,6 @@ B.E., Electronic Engneering, Huazhong University of Science and Technology, 2018
 #### Research Interests
 LLM, Deep Learning, Electronic Design Automation
 
-
+#### Work Experience
+- **Cadence**, Software Engineer, 2025-
+- **Nvidia**, Internship, 2024
