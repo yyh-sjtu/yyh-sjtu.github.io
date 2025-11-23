@@ -1,41 +1,76 @@
 
-# Academic Pages
 
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
+![Github Forks](https://img.shields.io/github/forks/senli1073/senli1073.github.io?style=flat)
+![Github Stars](https://img.shields.io/github/stars/senli1073/senli1073.github.io?style=flat)
+![License](https://img.shields.io/github/license/senli1073/senli1073.github.io)
+![Last Commit](https://img.shields.io/github/last-commit/senli1073/senli1073.github.io)
 
-Academic Pages is a Github Pages template for academic websites.
+# A simple Github Pages template for personal academic websites.
 
-
-# Getting Started
-
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
-
-See more info at https://academicpages.github.io/
-
-## Running Locally
-
-When you are initially working your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
-
-1. Clone the repository and made updates as detailed above.
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+## Preview
+[![Screenshot of the Website](https://raw.githubusercontent.com/senli1073/senli1073.github.io/main/screenshot_full.png)](https://senli1073.github.io/)
 
 
-# Maintenance 
+## Introduction
 
-Bug reports and feature requests to the template  should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+This personal academic website template is based on [bootstrap](https://github.com/StartBootstrap/startbootstrap-new-age).
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
+The template is designed to integrate Markdown files as content input.  There's no need to compile the webpage before deployment.  Upon loading, the Markdown files are automatically parsed and embedded into the page.
 
-## Bugfixes and enhancements
+This template supports LaTeX formula input. You can use `$...$` and `\(...\)` as delimiters for inline-math, or use `$$...$$` and `\[...\]` as delimiters for display-math. Macros such as `\ref{...}`, `\eqref{...}`, and `\begin{equation}...\end{equation}` are also supported. See [MathJax](https://docs.mathjax.org/en/latest/index.html) for more details.
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
+:milky_way: Demo: https://senli1073.github.io/
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+
+## Getting Start
+### 1. Fork this repository
+The repository name should be `<username>.github.io`, which will also be your website's URL.
+
+
+### 2. Edit page content
+
+(1) Go to the folder where you want to store your project, and clone the new repository:
+```
+git clone https://github.com/<username>/<username>.github.io.git
+```
+The directory structure is as follows:
+
+```.
+.
+├── contents
+└── static
+    ├── assets
+    │   └── img
+    ├── css
+    └── js
+```
+
+(2) Modify the content of each section, which corresponds to `contents/*.md`.
+
+(3) Adjust the title, copyright information, and other text of the website in `contents/config.yml`
+
+(4) Replace background image and photo with new ones for your web pages in `static/assets/img/`
+
+(5) Push it: 
+```
+git commit -am 'init'
+git push
+```
+
+### 3. Setup
+(1) Under your repository name, click `Settings`.
+
+(2) In the "Code and automation" section of the sidebar, click `Pages`.
+
+(3) Under "Build and deployment", under "Source", select Deploy from a branch. Then, use the branch dropdown menu and select a publishing source.
+
+### 4. Enjoy
+
+Fire up a browser and go to `https://<username>.github.io`
+
+> Note that it can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub.
+
+
+## License
+
+Copyright Sen Li, 2023-2025. Licensed under an MIT license. You can copy and mess with this template.
