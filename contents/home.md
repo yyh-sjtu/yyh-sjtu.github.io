@@ -16,6 +16,6 @@ B.E., Electronic Engineering, Huazhong University of Science and Technology, 201
 LLM, Multimodal Understanding and Representation, Deep Learning 
 
 #### Work Experience
-- **Kuaishou Technology**, AI Engineer, Multimodal Foundation Models & Applications Center, 2026-
-- **Cadence**, Software Engineer, Agentic AI Team, 2025-2026
+- **Kuaishou Technology**, AI Engineer, Foundation Models & Applications Group, 2026-
+- **Cadence**, Software Engineer, Agentic AI Group, 2025-2026
 - **Nvidia**, Internship, 2024
