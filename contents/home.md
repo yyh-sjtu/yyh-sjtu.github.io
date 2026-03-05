@@ -10,11 +10,12 @@ Email: yunhaoz.cs@gmail.com, yunhaoz@qq.com
 
 #### Education
 M.E., Electronic Information, Shanghai Jiao Tong University, 2022—2025.\
-B.E., Electronic Engneering, Huazhong University of Science and Technology, 2018—2022.
+B.E., Electronic Engineering, Huazhong University of Science and Technology, 2018—2022.
 
 #### Research Interests
-LLM, Deep Learning, Electronic Design Automation
+LLM, Multimodal Understanding and Representation, Deep Learning 
 
 #### Work Experience
-- **Cadence**, Software Engineer, 2025-
+- **Kuaishou Technology**, AI Engineer, Multimodal Foundation Models & Applications Center, 2026-
+- **Cadence**, Software Engineer, Agentic AI Team, 2025-2026
 - **Nvidia**, Internship, 2024
