@@ -48,10 +48,70 @@ section header h2{
     line-height: 4rem;
 }
 
+section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+#home header {
+    margin-top: -0.7rem;
+    margin-bottom: 0.35rem;
+}
+
+.home-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+}
+
+.home-title-row h2 {
+    margin-bottom: 0;
+}
+
+#home-github-badge {
+    line-height: 1;
+    margin-top: 0.15rem;
+}
+
+#home-github-badge img {
+    display: block;
+}
+
 section .main-body{
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     font-weight: 200;
-    line-height: 2.4rem;
+    line-height: 1.9;
+}
+
+section .main-body p,
+section .main-body ul,
+section .main-body ol {
+    margin-bottom: 0.65rem;
+}
+
+#publications .main-body {
+    font-size: 1.12rem;
+    line-height: 1.85;
+}
+
+#publications .main-body p {
+    position: relative;
+    padding-left: 1.1rem;
+    margin-bottom: 0.62rem;
+}
+
+#publications .main-body p::before {
+    content: "";
+    position: absolute;
+    left: 0.12rem;
+    top: 0.93em;
+    width: 0.38rem;
+    height: 0.38rem;
+    background-color: var(--h-title-color);
+    opacity: 0.8;
+    transform: translateY(-50%) rotate(45deg);
+    border-radius: 1px;
 }
 
 
@@ -91,7 +151,7 @@ section .main-body{
 #avatar {
     position: relative;
     height: 0;
-    top:min(-65px,max(-100px,calc(-1*100vw/12)));
+    top:min(-75px,max(-110px,calc(-1*100vw/11)));
     max-width: 55em;
     margin: 0 1.5rem 0 0;
     float: right;
@@ -106,7 +166,14 @@ section .main-body{
 @media screen and (max-width: 991px) {
     #avatar {
         margin: 0;
+        top: -65px;
+    }
+
+    #home header {
+        margin-top: -0.4rem;
+    }
+
+    .home-title-row {
+        gap: 0.5rem;
     }
 }
-
-
