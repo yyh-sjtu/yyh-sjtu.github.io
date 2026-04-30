@@ -14,5 +14,5 @@ LLM, Multimodal Understanding and Representation, Deep Learning
 
 #### Work Experience
 - **Kuaishou Technology**, Multimodal Large Model Algorithm Engineer, Foundation Models & Applications Group, 2026-
-- **Cadence**, Software Engineer, Agentic AI Group, 2025-2026
+- **Cadence**, Large Model Algorithm Engineer, Agentic AI Group, 2025-2026
 - **Nvidia**, Internship, 2024
