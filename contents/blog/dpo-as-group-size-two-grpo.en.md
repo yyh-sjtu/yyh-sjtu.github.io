@@ -249,7 +249,7 @@ Thus offline DPO is naturally viewed as an off-policy group-of-two relative surr
 
 ## 7. Re-examining RAD-DPO
 
-RAD-DPO applies preference learning to generative retrieval, where each item is represented by a structured Semantic ID (SID). The paper argues that standard DPO penalizes a rejected SID's entire sequence, causing “push-pull” conflict on hierarchical prefix tokens shared by positive and negative items.
+[RAD-DPO (*Robust Adaptive Denoising Direct Preference Optimization for Generative Retrieval in E-commerce*)](https://arxiv.org/abs/2602.23964) applies preference learning to generative retrieval, where each item is represented by a structured Semantic ID (SID). The paper argues that standard DPO penalizes a rejected SID's entire sequence, causing “push-pull” conflict on hierarchical prefix tokens shared by positive and negative items.
 
 The relative-gradient view reveals several problems with that explanation.
 

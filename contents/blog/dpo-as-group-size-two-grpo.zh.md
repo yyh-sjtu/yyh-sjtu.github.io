@@ -249,7 +249,7 @@ $$
 
 ## 7. 重新分析 RAD-DPO
 
-RAD-DPO 把 preference learning 应用于生成式推荐，其中每个 item 被表示为结构化 Semantic ID。论文认为，标准 DPO 会惩罚 rejected SID 的整个序列，使正负 item 共享的层级前缀同时受到 push 和 pull，从而产生梯度冲突。
+[RAD-DPO（*Robust Adaptive Denoising Direct Preference Optimization for Generative Retrieval in E-commerce*）](https://arxiv.org/abs/2602.23964) 把 preference learning 应用于生成式推荐，其中每个 item 被表示为结构化 Semantic ID。论文认为，标准 DPO 会惩罚 rejected SID 的整个序列，使正负 item 共享的层级前缀同时受到 push 和 pull，从而产生梯度冲突。
 
 相对梯度视角暴露了这一解释中的几个问题。
 

@@ -52,13 +52,15 @@ section header h2{
 #home > .container,
 #publications > .container,
 #awards > .container,
-#blog-preview > .container,
 .blog-hero > .container,
 .blog-content-section > .container {
     max-width: var(--content-max-width);
 }
 
-#home > .container {
+#home > .container,
+#publications > .container,
+#blog-preview > .container,
+#awards > .container {
     max-width: 940px;
 }
 
@@ -102,12 +104,16 @@ section .main-body h4 {
     font-size: 1.35rem;
 }
 
-#home .main-body {
+#home .main-body,
+#publications .main-body,
+#awards .main-body {
     font-size: 0.97rem;
     line-height: 1.72;
 }
 
-#home .main-body h4 {
+#home .main-body h4,
+#publications .main-body h4,
+#awards .main-body h4 {
     font-size: 1.22rem;
 }
 
@@ -118,8 +124,8 @@ section .main-body ol {
 }
 
 #publications .main-body {
-    font-size: 1.04rem;
-    line-height: 1.78;
+    font-size: 0.97rem;
+    line-height: 1.72;
 }
 
 #publications .main-body p {
