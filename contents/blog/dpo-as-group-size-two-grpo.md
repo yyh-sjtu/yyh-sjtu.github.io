@@ -1,6 +1,6 @@
 > **先给结论。** 在忽略 PPO clipping、重要性采样、长度归一化等细节后，DPO 对一对 chosen/rejected 样本产生的更新方向，确实与组大小 $G=2$、优势为 $(+1,-1)$ 的组相对策略梯度相同。DPO 可以被理解为一种**带自适应 pair weight 的二样本组相对策略梯度**。但这只是梯度层面的条件等价，不代表 DPO 与完整 GRPO 是同一个算法。
 >
-> 这个视角也能反驳一种过于宽泛的说法：对原始、未做长度归一化的 DPO，如果正负回答有完全相同的 token 前缀，那么前缀的直接 log-prob 项会在代数上严格抵消，并不存在“同一前缀同时受到正负梯度冲突”。不过，RAD-DPO 实际采用的并不是这个标准目标，而是长度归一化、多负例和 listwise loss；在它的目标中，前缀梯度通常不再严格抵消。因此，更准确的评价是：**RAD-DPO 的工程改动可能有效，但它用“标准 DPO 的前缀冲突”解释改动，理论表述得过强。**
+> 这个视角也能反驳一种过于宽泛的说法：如果正负回答有完全相同的 token 前缀，那么原始 DPO 中前缀的直接 log-prob 项会在代数上严格抵消，并不存在“同一前缀同时受到正负梯度冲突”。RAD-DPO 的 SID 由固定三层 codebook 构成，正负序列等长，因此它采用的长度归一化也不会破坏这一抵消。其多负例 listwise 目标只会在“部分负例共享前缀、部分不共享”时留下残余前缀梯度。因此，更准确的评价是：**RAD-DPO 的工程改动可能有效，但它用“标准 DPO 的前缀冲突”解释改动，理论表述得过强。**
 
 ## 1. 记号
 
@@ -243,7 +243,7 @@ RAD-DPO 将其 Token-Level Gradient Detachment（TLGD）的动机描述为：标
 
 但 RAD-DPO 真正优化的目标与原始 DPO 不同，主要有三个变化。
 
-### 7.1 长度归一化破坏前缀抵消
+### 7.1 固定长度 SID 下，长度归一化不会破坏抵消
 
 RAD-DPO 使用类似 SimPO 的长度归一化隐式奖励（且不使用参考模型）：
 
@@ -251,20 +251,47 @@ $$
 \hat r_\theta(x,y)=\frac{1}{|y|}\log\pi_\theta(y\mid x).
 $$
 
-对共享前缀 $c$，正负奖励之差中的前缀系数变成
+但论文使用三层 RQ-Kmeans codebook 构造 SID。按该输出格式，chosen 与 rejected 都是固定长度 $L$ 的三层编码。对共享前缀 $c$，有
 
 $$
-\left(\frac{1}{T_w}-\frac{1}{T_l}\right)
-\log\pi_\theta(c\mid x).
+\begin{aligned}
+\hat r_\theta(y_w)-\hat r_\theta(y_l)
+&=\frac{1}{L}\left[
+\log\pi_\theta(c\mid x)+\log\pi_\theta(a\mid x,c)
+-\log\pi_\theta(c\mid x)-\log\pi_\theta(b\mid x,c)
+\right]\\
+&=\frac{1}{L}\left[
+\log\pi_\theta(a\mid x,c)-\log\pi_\theta(b\mid x,c)
+\right].
+\end{aligned}
 $$
 
-只要 $T_w\ne T_l$，它就不为零。此时确实可能存在直接的共同前缀梯度，不过根因是**长度归一化使正负两侧权重不相等**，而不是原始 DPO 天生会错误惩罚共同前缀。
+因此，长度归一化在这个固定长度任务中只是给整个差值乘上相同常数 $1/L$，共同前缀仍然严格抵消。除非实际实现允许提前输出 EOS、可变深度 SID 或不对称 mask，而论文没有报告这些设定。
 
 ### 7.2 多负例与 listwise 权重进一步破坏对称性
 
-论文使用一个正例和多个负例，并通过 log-sum-exp 构造 listwise preference loss。其梯度会给不同负例分配不同 softmax 权重。即使多个负例共享部分前缀，只要长度、分叉点或权重不同，正负梯度一般也不会严格对称。
+论文使用一个正例和多个负例，并通过 log-sum-exp 构造 listwise preference loss。忽略动态权重，记
 
-所以，TLGD 对论文自己的训练目标可能是有意义的；但更准确的理论故事应当是：**修复由长度归一化和多负例加权引入的不对称 credit assignment**，而不是修复标准 DPO 必然存在的前缀冲突。
+$$
+z=\log\sum_j\exp(\hat r_w-\hat r_j),\qquad
+q_j=\frac{\exp(-\hat r_j)}{\sum_k\exp(-\hat r_k)},
+$$
+
+则
+
+$$
+\nabla z=\nabla\hat r_w-\sum_jq_j\nabla\hat r_j.
+$$
+
+设只有负例子集 $S$ 与 chosen 共享某个前缀，该前缀直接梯度的系数为
+
+$$
+\frac{1}{L}\left(1-\sum_{j\in S}q_j\right).
+$$
+
+如果所有负例都共享这个前缀，$\sum_jq_j=1$，它仍然完全抵消；只有部分负例共享、部分不共享时才会留下残余项。这个残余来自 chosen 同时与其他不共享前缀的负例进行 listwise 比较，并不是某个共享正负 pair 内部的“push-pull 冲突”。加入 RDRW 后权重形式更复杂，但不改变这一区分。
+
+所以，TLGD 对论文自己的训练目标可能是有意义的；但更准确的理论故事应当是：**在多负例 listwise 训练中，主动采用偏向 chosen 前缀的非对称 credit assignment**，而不是修复标准 DPO 必然存在的前缀冲突。
 
 ### 7.3 TLGD 实际截断了什么？
 
@@ -293,7 +320,7 @@ RAD-DPO 的消融实验中，加入 TLGD 后多数离线指标有小幅提升：
 
 1. 提升幅度整体较小，且 hallucination rate 反而略差。
 2. 论文没有直接展示共同前缀梯度的方差、夹角、范数或训练振荡曲线。
-3. 没有把“长度归一化导致的不抵消”与“原始 DPO 的行为”分开做控制实验。
+3. 没有区分 pairwise DPO 中的精确抵消与多负例 listwise 目标产生的残余项，也没有直接测量二者的前缀梯度。
 4. stop-gradient 同时改变了 credit assignment，因此指标改善也可能来自 chosen-prefix reinforcement，而非消除了所谓冲突。
 
 因此，证据支持的最强结论是“TLGD 对该系统有轻微经验收益”，而不是“标准 DPO 存在前缀梯度冲突，且 TLGD 已证明解决了它”。
@@ -305,7 +332,7 @@ RAD-DPO 的消融实验中，加入 TLGD 后多数离线指标有小幅提升：
 1. **DPO 与 $G=2$ GRPO 的直觉是成立的。** 二者对一对样本共享 $\nabla\log\pi(y_w)-\nabla\log\pi(y_l)$ 这个核心方向，DPO 的 logistic residual 相当于自适应的组内优势幅度。
 2. **这种等价有明确边界。** 完整 GRPO 的 rollout、reward normalization、old-policy ratio、clipping、显式 KL 和 token averaging 都不能从 DPO 中凭空得到。
 3. **该视角能够反驳 RAD-DPO 对“标准 DPO”的宽泛批评。** 对完全相同的前缀，原始 DPO 的直接前缀梯度严格抵消。
-4. **它不能否定 RAD-DPO 改动的全部合理性。** RAD-DPO 自己的长度归一化和多负例目标破坏了抵消；TLGD 可能是有用的工程修正，但应被解释为非对称的 prefix credit assignment，而非已经被证明的“标准 DPO 梯度冲突修复”。
+4. **它不能否定 RAD-DPO 改动的全部合理性。** 固定长度 SID 的长度归一化不会破坏抵消，但多负例 listwise 目标在只有部分负例共享前缀时可能留下残余项；TLGD 可能是有用的工程修正，但应被解释为非对称的 prefix credit assignment，而非已经被证明的“标准 DPO 梯度冲突修复”。
 
 从更一般的角度看，DPO、GRPO 和许多 preference optimization 方法都在做同一件核心工作：为采样序列构造有正有负的相对权重，再乘上 sequence/token score function。真正决定算法差异的，不只是“chosen 加、rejected 减”，而是**权重怎样产生、数据由谁采样、是否校正分布偏移，以及 credit 被怎样分配到 token**。
 

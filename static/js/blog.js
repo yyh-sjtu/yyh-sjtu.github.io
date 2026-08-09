@@ -21,6 +21,38 @@ const renderBlogTags = tags => (tags || [])
     .map(tag => `<span class="blog-tag">${escapeHtml(tag)}</span>`)
     .join('');
 
+// Protect TeX from Marked so underscores and angle brackets inside formulas
+// are not interpreted as Markdown emphasis or HTML before MathJax sees them.
+const renderMarkdownWithMath = markdown => {
+    const mathFragments = [];
+    const preserveMath = (tex, display) => {
+        const token = `MATHPLACEHOLDER${mathFragments.length}END`;
+        const delimiter = display ? '$$' : '$';
+        mathFragments.push({
+            token,
+            value: `${delimiter}${escapeHtml(tex)}${delimiter}`,
+        });
+        return token;
+    };
+
+    let protectedMarkdown = String(markdown).replace(
+        /\$\$([\s\S]*?)\$\$/g,
+        (_, tex) => preserveMath(tex, true),
+    );
+    protectedMarkdown = protectedMarkdown.replace(
+        /(^|[^\\])\$([^$\n]+?)\$/gm,
+        (_, prefix, tex) => `${prefix}${preserveMath(tex, false)}`,
+    );
+
+    let html = marked.parse(protectedMarkdown);
+    mathFragments.forEach(({ token, value }) => {
+        // A replacer function keeps `$$` literal; replacement strings treat
+        // `$$` as the special escape for a single dollar sign.
+        html = html.replaceAll(token, () => value);
+    });
+    return html;
+};
+
 const loadBlogConfig = async () => {
     try {
         const response = await fetch(blogContentDir + 'config.yml');
@@ -74,7 +106,7 @@ const renderBlogPage = async () => {
                     <h1>${escapeHtml(post.title)}</h1>
                     <div class="blog-tags">${renderBlogTags(post.tags)}</div>
                 </header>
-                <div class="main-body blog-post-body">${marked.parse(await postResponse.text())}</div>
+                <div class="main-body blog-post-body">${renderMarkdownWithMath(await postResponse.text())}</div>
             `;
             if (window.MathJax?.typesetPromise) await MathJax.typesetPromise([postElement]);
             return;
