@@ -1,5 +1,14 @@
 # Add new posts here. The newest date is displayed first.
 posts:
+  - slug: dpo-as-group-size-two-grpo
+    title: DPO 是组大小为 2 的 GRPO 吗？从公式、Token 梯度到 RAD-DPO
+    date: "2026-08-09"
+    summary: 推导 DPO 与二样本组相对策略梯度的关系，并重新审视 RAD-DPO 的前缀梯度截断。
+    tags:
+      - DPO
+      - GRPO
+      - RLHF
+      - Theory
   - slug: welcome
     title: Welcome to My Blog
     date: "2026-08-09"
