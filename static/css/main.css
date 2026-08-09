@@ -3,6 +3,7 @@
 
 :root{
     --h-title-color:#3948d2;
+    --content-max-width: 1040px;
 }
 
 .header {
@@ -44,8 +45,16 @@
 section header h2{
     font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
     color: var(--h-title-color);
-    font-size: 2.3rem;
-    line-height: 4rem;
+    font-size: 2.15rem;
+    line-height: 3.7rem;
+}
+
+#home > .container,
+#publications > .container,
+#awards > .container,
+.blog-hero > .container,
+.blog-content-section > .container {
+    max-width: var(--content-max-width);
 }
 
 section {
@@ -79,9 +88,13 @@ section {
 }
 
 section .main-body{
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-weight: 200;
-    line-height: 1.9;
+    line-height: 1.8;
+}
+
+section .main-body h4 {
+    font-size: 1.35rem;
 }
 
 section .main-body p,
@@ -91,8 +104,8 @@ section .main-body ol {
 }
 
 #publications .main-body {
-    font-size: 1.12rem;
-    line-height: 1.85;
+    font-size: 1.04rem;
+    line-height: 1.78;
 }
 
 #publications .main-body p {
@@ -149,7 +162,7 @@ section .main-body ol {
 .blog-hero h1 {
     margin-bottom: 0.75rem;
     font-family: "Newsreader", Georgia, serif;
-    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-size: clamp(2.75rem, 7vw, 4.9rem);
     line-height: 0.95;
 }
 
@@ -157,7 +170,7 @@ section .main-body ol {
     max-width: 42rem;
     margin-bottom: 0;
     color: rgba(255, 255, 255, 0.82);
-    font-size: 1.15rem;
+    font-size: 1.05rem;
 }
 
 .blog-content-section {
@@ -200,8 +213,8 @@ section .main-body ol {
 .blog-card {
     display: flex;
     flex-direction: column;
-    min-height: 14rem;
-    padding: 1.5rem;
+    min-height: 13.25rem;
+    padding: 1.35rem;
     background: #fff;
     border: 1px solid rgba(57, 72, 210, 0.12);
     border-radius: 0.8rem;
@@ -225,7 +238,7 @@ section .main-body ol {
 
 .blog-card h3 {
     margin-bottom: 0.7rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     line-height: 1.35;
 }
 
@@ -236,6 +249,7 @@ section .main-body ol {
 
 .blog-summary {
     color: #606772;
+    font-size: 0.95rem;
     line-height: 1.65;
 }
 
@@ -268,7 +282,7 @@ section .main-body ol {
 }
 
 .blog-post {
-    max-width: 52rem;
+    max-width: 47rem;
     margin: 0 auto;
     padding: 2rem 2.25rem;
     background: #fff;
@@ -284,7 +298,7 @@ section .main-body ol {
 
 .blog-post-header h1 {
     margin-bottom: 0.8rem;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.85rem, 4.5vw, 2.7rem);
 }
 
 .blog-post-body h2,
