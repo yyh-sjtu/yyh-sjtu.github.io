@@ -10,7 +10,7 @@ M.E., Electronic Information, Shanghai Jiao Tong University, 2022—2025.\
 B.E., Electronic Engineering, Huazhong University of Science and Technology, 2018—2022.
 
 #### Research Interests
-LLM, Multimodal Understanding and Representation, Deep Learning 
+LLM, Multimodal Understanding and Representation, Agent Systems, Deep Learning 
 
 #### Work Experience
 - **Kuaishou Technology**, Multimodal Large Language Model Algorithm Engineer, Foundation Models & Applications Group, 2026-
