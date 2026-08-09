@@ -65,8 +65,7 @@
             }
         };
     </script>
-    <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <!-- Core JS-->
     <script type="text/javascript" src="static/js/scripts.js"></script>
@@ -92,6 +91,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link me-lg-3" href="#publications">PUBLICATIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link me-lg-3" href="#blog">BLOG</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link me-lg-3" href="#awards">AWARDS</a>
@@ -149,8 +151,26 @@
     </section>
     <!-- Publications  -->
 
+    <!-- Blog -->
+    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="blog">
+        <div class="container px-5">
+            <header class="blog-section-header">
+                <div>
+                    <h2><i class="bi bi-journal-text"></i>&nbsp;BLOG</h2>
+                    <p>Notes on research, engineering, and everything in between.</p>
+                </div>
+                <a class="blog-back-link" id="blog-back-link" href="./#blog" hidden>
+                    <i class="bi bi-arrow-left"></i>&nbsp;All posts
+                </a>
+            </header>
+            <div id="blog-list" aria-live="polite"></div>
+            <article class="blog-post" id="blog-post" hidden aria-live="polite"></article>
+        </div>
+    </section>
+    <!-- Blog -->
+
     <!-- Awards -->
-    <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="awards">
+    <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="awards">
         <div class="container px-5">
             <header>
                 <h2 id="awards-subtitle"><i class="bi bi-award-fill"></i>AWARDS </h2>

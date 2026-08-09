@@ -1,0 +1,9 @@
+# Add new posts here. The newest date is displayed first.
+posts:
+  - slug: welcome
+    title: Welcome to My Blog
+    date: "2026-08-09"
+    summary: A place to share notes about research, engineering, and ideas worth remembering.
+    tags:
+      - Notes
+      - Research
