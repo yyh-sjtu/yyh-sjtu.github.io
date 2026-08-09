@@ -140,7 +140,7 @@ section .main-body ol {
     min-height: 100vh;
     background: #f8f9fc;
     color: #24272d;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--bs-body-font-family);
 }
 
 .blog-page-main {
@@ -162,15 +162,15 @@ section .main-body ol {
 
 .blog-hero-eyebrow {
     margin-bottom: 0.7rem;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.14em;
 }
 
 .blog-hero h1 {
     margin-bottom: 0.75rem;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    font-family: "Newsreader", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: clamp(2.6rem, 5.5vw, 4.2rem);
     line-height: 1;
 }
 
@@ -178,7 +178,7 @@ section .main-body ol {
     max-width: 42rem;
     margin-bottom: 0;
     color: rgba(255, 255, 255, 0.82);
-    font-size: 1.05rem;
+    font-size: 1rem;
 }
 
 .blog-content-section {
@@ -188,6 +188,7 @@ section .main-body ol {
 
 .blog-content-section .blog-section-header h2 {
     color: #24272d;
+    font-size: 2rem;
 }
 
 .blog-section-header h2 {
@@ -240,7 +241,7 @@ section .main-body ol {
 .blog-date {
     margin: 0 0 0.5rem;
     color: #7a808a;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -248,9 +249,9 @@ section .main-body ol {
 
 .blog-card h3 {
     margin-bottom: 0.7rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 1.45rem;
-    font-weight: 700;
+    font-family: "Newsreader", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
     line-height: 1.3;
 }
 
@@ -261,7 +262,7 @@ section .main-body ol {
 
 .blog-summary {
     color: #606772;
-    font-size: 1rem;
+    font-size: 0.92rem;
     line-height: 1.65;
 }
 
@@ -284,13 +285,13 @@ section .main-body ol {
     color: #4b55aa;
     background: #eef0ff;
     border-radius: 999px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
 }
 
 .blog-read-more {
     flex: 0 0 auto;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .blog-post {
@@ -310,16 +311,16 @@ section .main-body ol {
 
 .blog-post-header h1 {
     margin-bottom: 0.8rem;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2.1rem, 4.5vw, 3rem);
+    font-family: "Newsreader", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: clamp(1.9rem, 4vw, 2.5rem);
     line-height: 1.16;
 }
 
 .blog-page .blog-post-body {
     color: #2b2d31;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.125rem;
-    font-weight: 400;
+    font-family: var(--bs-body-font-family);
+    font-size: 1rem;
+    font-weight: 300;
     line-height: 1.75;
 }
 
@@ -327,23 +328,23 @@ section .main-body ol {
 .blog-page .blog-post-body ul,
 .blog-page .blog-post-body ol,
 .blog-page .blog-post-body blockquote {
-    margin-bottom: 1.25em;
+    margin-bottom: 1.1em;
 }
 
 .blog-page .blog-post-body h2,
 .blog-page .blog-post-body h3 {
-    margin: 2em 0 0.65em;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-weight: 700;
+    margin: 1.8em 0 0.6em;
+    font-family: "Newsreader", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 600;
     line-height: 1.25;
 }
 
 .blog-page .blog-post-body h2 {
-    font-size: 1.65rem;
+    font-size: 1.45rem;
 }
 
 .blog-page .blog-post-body h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .blog-page .blog-post-body a {
@@ -371,7 +372,7 @@ section .main-body ol {
     background: #f3f4f7;
     border: 1px solid #e2e4ea;
     border-radius: 0.45rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.6;
 }
 
