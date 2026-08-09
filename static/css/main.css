@@ -52,9 +52,14 @@ section header h2{
 #home > .container,
 #publications > .container,
 #awards > .container,
+#blog-preview > .container,
 .blog-hero > .container,
 .blog-content-section > .container {
     max-width: var(--content-max-width);
+}
+
+#home > .container {
+    max-width: 940px;
 }
 
 section {
@@ -97,6 +102,15 @@ section .main-body h4 {
     font-size: 1.35rem;
 }
 
+#home .main-body {
+    font-size: 0.97rem;
+    line-height: 1.72;
+}
+
+#home .main-body h4 {
+    font-size: 1.22rem;
+}
+
 section .main-body p,
 section .main-body ul,
 section .main-body ol {
@@ -132,7 +146,7 @@ section .main-body ol {
     align-items: flex-end;
     justify-content: space-between;
     gap: 1.5rem;
-    max-width: 48rem;
+    max-width: 54rem;
     margin: 0 auto 1.5rem;
 }
 
@@ -157,7 +171,7 @@ section .main-body ol {
 
 .blog-hero > .container,
 .blog-content-section > .container {
-    max-width: 960px;
+    max-width: 1080px;
 }
 
 .blog-hero-eyebrow {
@@ -217,7 +231,7 @@ section .main-body ol {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 1.25rem;
-    max-width: 44rem;
+    max-width: 54rem;
     margin: 0 auto;
 }
 
@@ -295,12 +309,66 @@ section .main-body ol {
 }
 
 .blog-post {
-    max-width: 43rem;
+    max-width: 54rem;
     margin: 0 auto;
     padding: 2rem 2.25rem;
     background: #fff;
     border-radius: 0.8rem;
     box-shadow: 0 0.35rem 1.3rem rgba(28, 36, 85, 0.07);
+}
+
+.home-blog-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.home-blog-card {
+    position: relative;
+    padding: 1.5rem 1.75rem;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(57, 72, 210, 0.13);
+    border-radius: 0.8rem;
+    box-shadow: 0 0.35rem 1.3rem rgba(28, 36, 85, 0.07);
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.home-blog-link:hover .home-blog-card {
+    transform: translateY(-2px);
+    border-color: rgba(57, 72, 210, 0.28);
+    box-shadow: 0 0.55rem 1.6rem rgba(28, 36, 85, 0.11);
+}
+
+.home-blog-eyebrow {
+    margin-bottom: 0.4rem;
+    color: #747b87;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+}
+
+.home-blog-card h3 {
+    margin-bottom: 0.55rem;
+    color: #24272d;
+    font-family: "Newsreader", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.home-blog-card > p:not(.home-blog-eyebrow) {
+    max-width: 46rem;
+    margin-bottom: 0.85rem;
+    color: #606772;
+    font-size: 0.92rem;
+    line-height: 1.65;
+}
+
+.home-blog-cta {
+    color: var(--h-title-color);
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .blog-section-actions {

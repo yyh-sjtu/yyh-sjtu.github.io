@@ -23,6 +23,26 @@ $$
 =-\log\sigma(\beta\Delta_\theta).
 $$
 
+把 chosen 和 rejected 的自回归序列概率分别展开，可以得到我使用的完整 token 形式：
+
+$$
+\begin{aligned}
+\mathcal L_{\mathrm{DPO}}
+=-\log\sigma\Bigg(\beta\Bigg[&
+\left(
+\sum_{t=1}^{T_w}\log\pi_\theta(y_{w,t}\mid x,y_{w,<t})
+-\sum_{t=1}^{T_l}\log\pi_\theta(y_{l,t}\mid x,y_{l,<t})
+\right)\\
+&-\left(
+\sum_{t=1}^{T_w}\log\pi_{\mathrm{ref}}(y_{w,t}\mid x,y_{w,<t})
+-\sum_{t=1}^{T_l}\log\pi_{\mathrm{ref}}(y_{l,t}\mid x,y_{l,<t})
+\right)
+\Bigg]\Bigg).
+\end{aligned}
+$$
+
+第一个括号是 policy model 中 chosen 与 rejected 的 log-probability 差，第二个括号是 reference model 中对应的差。这个分组说明，DPO 实际优化的是 policy 相对偏好 margin 减去 reference margin。
+
 由于参考模型固定，梯度下降的方向为
 
 $$

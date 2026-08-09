@@ -4,6 +4,13 @@ const content_dir = 'contents/'
 const config_file = 'config.yml'
 const section_names = ['home', 'publications', 'awards']
 
+const getEnglishBlogValue = value => {
+    if (value && typeof value === 'object' && !Array.isArray(value)) {
+        return value.en || value.zh || '';
+    }
+    return value || '';
+}
+
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -60,5 +67,18 @@ window.addEventListener('DOMContentLoaded', event => {
     )).then(() => MathJax.typesetPromise(
         section_names.map(name => document.getElementById(name + '-md'))
     ));
+
+    // Keep the homepage blog preview in sync with the newest post.
+    fetch(content_dir + 'blogs.yml')
+        .then(response => response.text())
+        .then(text => {
+            const posts = jsyaml.load(text)?.posts || [];
+            posts.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+            if (!posts.length) return;
+            const latestPost = posts[0];
+            document.getElementById('home-blog-title').textContent = getEnglishBlogValue(latestPost.title);
+            document.getElementById('home-blog-summary').textContent = getEnglishBlogValue(latestPost.summary);
+        })
+        .catch(error => console.log(error));
 
 }); 

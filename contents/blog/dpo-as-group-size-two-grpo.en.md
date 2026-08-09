@@ -23,6 +23,26 @@ $$
 =-\log\sigma(\beta\Delta_\theta).
 $$
 
+Expanding the two autoregressive sequence probabilities gives the full token-level form:
+
+$$
+\begin{aligned}
+\mathcal L_{\mathrm{DPO}}
+=-\log\sigma\Bigg(\beta\Bigg[&
+\left(
+\sum_{t=1}^{T_w}\log\pi_\theta(y_{w,t}\mid x,y_{w,<t})
+-\sum_{t=1}^{T_l}\log\pi_\theta(y_{l,t}\mid x,y_{l,<t})
+\right)\\
+&-\left(
+\sum_{t=1}^{T_w}\log\pi_{\mathrm{ref}}(y_{w,t}\mid x,y_{w,<t})
+-\sum_{t=1}^{T_l}\log\pi_{\mathrm{ref}}(y_{l,t}\mid x,y_{l,<t})
+\right)
+\Bigg]\Bigg).
+\end{aligned}
+$$
+
+The first parenthesis is the chosen-versus-rejected log-probability difference under the policy model; the second is the same difference under the reference model. This grouping makes it clear that DPO learns from the policy's **relative** preference margin after subtracting the reference margin.
+
 Because the reference model is fixed,
 
 $$
