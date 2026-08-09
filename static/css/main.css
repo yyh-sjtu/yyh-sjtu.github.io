@@ -85,12 +85,14 @@ section {
     margin-bottom: 0;
 }
 
-#home-github-badge {
+#home-github-badge,
+#home-scholar-badge {
     line-height: 1;
     margin-top: 0.15rem;
 }
 
-#home-github-badge img {
+#home-github-badge img,
+#home-scholar-badge img {
     display: block;
 }
 
