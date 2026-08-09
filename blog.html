@@ -61,9 +61,9 @@
     <main class="blog-page-main">
         <header class="blog-hero">
             <div class="container px-5">
-                <p class="blog-hero-eyebrow">YUNHAO ZHOU'S BLOG</p>
-                <h1>Notes &amp; Ideas</h1>
-                <p>Research notes, engineering practice, and ideas worth remembering.</p>
+                <p class="blog-hero-eyebrow" id="blog-hero-eyebrow">YUNHAO ZHOU'S BLOG</p>
+                <h1 id="blog-hero-title">Notes &amp; Ideas</h1>
+                <p id="blog-hero-description">Research notes, engineering practice, and ideas worth remembering.</p>
             </div>
         </header>
 
@@ -74,9 +74,15 @@
                         <h2 id="blog-view-title">All Posts</h2>
                         <p id="blog-view-description">The latest writing, sorted from newest to oldest.</p>
                     </div>
-                    <a class="blog-back-link" id="blog-back-link" href="blog.html" hidden>
-                        <i class="bi bi-arrow-left"></i>&nbsp;All posts
-                    </a>
+                    <div class="blog-section-actions">
+                        <div class="blog-language-switch" role="group" aria-label="Article language">
+                            <button type="button" data-blog-language="en" aria-pressed="true">EN</button>
+                            <button type="button" data-blog-language="zh" aria-pressed="false">中文</button>
+                        </div>
+                        <a class="blog-back-link" id="blog-back-link" href="blog.html" hidden>
+                            <i class="bi bi-arrow-left"></i>&nbsp;All posts
+                        </a>
+                    </div>
                 </header>
                 <div id="blog-list" aria-live="polite"></div>
                 <article class="blog-post" id="blog-post" hidden aria-live="polite"></article>

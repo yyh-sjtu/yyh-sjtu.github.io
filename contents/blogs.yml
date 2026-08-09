@@ -1,18 +1,32 @@
 # Add new posts here. The newest date is displayed first.
 posts:
   - slug: dpo-as-group-size-two-grpo
-    title: DPO 是组大小为 2 的 GRPO 吗？从公式、Token 梯度到 RAD-DPO
+    title:
+      en: Personal Thoughts and Understanding of DPO and GRPO
+      zh: DPO 和 GRPO 的个人思考与理解
     date: "2026-08-09"
-    summary: 推导 DPO 与二样本组相对策略梯度的关系，并重新审视 RAD-DPO 的前缀梯度截断。
+    summary:
+      en: How relative objectives cancel stylistic token noise, induce implicit token-level credit assignment, and expose problems in RAD-DPO.
+      zh: 从相对目标如何抵消风格 token 随机性、实现隐式 token 级 credit assignment，到重新审视 RAD-DPO。
+    content:
+      en: blog/dpo-as-group-size-two-grpo.en.md
+      zh: blog/dpo-as-group-size-two-grpo.zh.md
     tags:
       - DPO
       - GRPO
       - RLHF
       - Theory
   - slug: welcome
-    title: Welcome to My Blog
+    title:
+      en: Welcome to My Blog
+      zh: 欢迎来到我的博客
     date: "2026-08-09"
-    summary: A place to share notes about research, engineering, and ideas worth remembering.
+    summary:
+      en: A place to share notes about research, engineering, and ideas worth remembering.
+      zh: 用来分享研究笔记、工程实践和值得记录的想法。
+    content:
+      en: blog/welcome.md
+      zh: blog/welcome.zh.md
     tags:
       - Notes
       - Research
