@@ -36,7 +36,9 @@ contents/blog/my-first-paper-note.md
 python3 -m http.server 8000
 ```
 
-然后访问 `http://localhost:8000`。不要直接双击 `index.html`，因为浏览器会阻止页面读取 Markdown 文件。
+然后访问 `http://localhost:8000/blog.html`。不要直接双击 `blog.html`，因为浏览器会阻止页面读取 Markdown 文件。
+
+博客首页地址为 `blog.html`，单篇文章地址为 `blog.html?post=<slug>`。
 
 ## 4. 发布
 

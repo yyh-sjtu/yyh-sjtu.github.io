@@ -122,6 +122,53 @@ section .main-body ol {
     margin-bottom: 1.25rem;
 }
 
+.blog-page {
+    min-height: 100vh;
+    background: #f8f9fc;
+}
+
+.blog-page-main {
+    padding-top: 4.55rem;
+}
+
+.blog-hero {
+    padding: 5rem 0 4.5rem;
+    color: #fff;
+    background:
+        radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.16), transparent 30%),
+        linear-gradient(135deg, #2937bd, #5665e9);
+}
+
+.blog-hero-eyebrow {
+    margin-bottom: 0.7rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.blog-hero h1 {
+    margin-bottom: 0.75rem;
+    font-family: "Newsreader", Georgia, serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    line-height: 0.95;
+}
+
+.blog-hero > .container > p:last-child {
+    max-width: 42rem;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.15rem;
+}
+
+.blog-content-section {
+    min-height: 32rem;
+    padding: 3.5rem 0 5rem;
+}
+
+.blog-content-section .blog-section-header h2 {
+    color: #24272d;
+}
+
 .blog-section-header h2 {
     margin-bottom: 0;
 }
@@ -358,5 +405,13 @@ section .main-body ol {
 
     .blog-post {
         padding: 1.4rem;
+    }
+
+    .blog-hero {
+        padding: 3.5rem 0 3rem;
+    }
+
+    .blog-content-section {
+        padding-top: 2.5rem;
     }
 }
