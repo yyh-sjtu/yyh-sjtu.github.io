@@ -3,3 +3,6 @@ _site/
 
 # Ignore the Gemfile that is generated
 Gemfile.lock
+
+# Local design backup (kept out of the published website)
+/backups/open-source-before-panel/

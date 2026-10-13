@@ -149,6 +149,160 @@ section .main-body ol {
     border-radius: 1px;
 }
 
+.open-source-inline {
+    display: grid;
+    grid-template-columns: 135px minmax(0, 1fr);
+    align-items: center;
+    gap: 1rem 1.5rem;
+    margin-top: 1.3rem;
+    padding: 1.15rem 1.25rem;
+    background: linear-gradient(120deg, #f5f6fb 0%, #fafbfe 55%, #f4f8f6 100%);
+    border: 1px solid #e6eaf2;
+    border-radius: 1rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 3px 12px rgba(38, 48, 78, 0.025);
+}
+
+.open-source-inline h3 {
+    margin: 0;
+    padding-left: 0.5rem;
+    color: #535d7c;
+    font-family: var(--bs-body-font-family);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.open-source-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 205px));
+    justify-content: start;
+    gap: 0.75rem;
+}
+
+.open-source-project {
+    --project-accent: #a84e25;
+    --project-border: #ebddd3;
+    --project-tint: #fff9f4;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.85rem;
+    color: #303644;
+    min-width: 0;
+    background: linear-gradient(115deg, var(--project-tint), #fff 80%);
+    border: 1px solid var(--project-border);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 5px rgba(30, 40, 60, 0.025);
+    text-decoration: none;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.open-source-openevolve {
+    --project-accent: #347653;
+    --project-border: #dbe7df;
+    --project-tint: #f5faf7;
+}
+
+.open-source-mark {
+    display: grid;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 42px;
+}
+
+/* Show the symbol from each original logo, with the project name alongside it. */
+.open-source-logo-crop {
+    display: block;
+    position: relative;
+    width: 32px;
+    height: 42px;
+    overflow: hidden;
+}
+
+.open-source-logo-crop img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 138px;
+    max-width: none;
+    height: 42px;
+}
+
+.open-source-openevolve .open-source-logo-crop {
+    width: 21px;
+}
+
+.open-source-openevolve .open-source-logo-crop img {
+    width: 88px;
+    height: auto;
+    top: -8px;
+    mix-blend-mode: multiply;
+}
+
+.open-source-project strong,
+.open-source-project small {
+    display: block;
+}
+
+.open-source-project strong {
+    font-size: 0.88rem;
+}
+
+.open-source-project small {
+    margin-top: 0.15rem;
+    color: var(--project-accent);
+    font-size: 0.66rem;
+    letter-spacing: 0.015em;
+}
+
+.open-source-project small::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin-right: 0.35rem;
+    vertical-align: 0.15em;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.open-source-arrow {
+    margin-left: auto;
+    color: #8991a0;
+    font-size: 0.8rem;
+}
+
+.open-source-project:hover {
+    color: var(--project-accent);
+    border-color: var(--project-accent);
+    box-shadow: 0 3px 10px rgba(28, 36, 85, 0.06);
+}
+
+.open-source-project:focus-visible {
+    outline: 2px solid var(--h-title-color);
+    outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+    .open-source-inline {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .open-source-links {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .open-source-project {
+        transition: none;
+    }
+}
+
 .blog-section-header {
     display: flex;
     align-items: flex-end;
