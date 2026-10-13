@@ -1,4 +1,6 @@
 
+- 2026 Outstanding New Hire Award, Kuaishou Technology
+
 - 2024 Honorable Mention Award at the 2024 ICCAD LLM4HWDesign Contest, 4th Place.
 
 - 2023 First class scholarship of SJTU
