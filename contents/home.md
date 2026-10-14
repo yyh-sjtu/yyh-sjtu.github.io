@@ -16,8 +16,8 @@ LLM, Multimodal Understanding and Representation, Agent Systems, Deep Learning
 
 <ul class="work-experience">
   <li>
-    <a class="work-company" href="https://www.kuaishou.com/" target="_blank" rel="noopener noreferrer" aria-label="Kuaishou Technology — visit company website (opens in a new tab)">
-      <span class="work-logo work-logo-kuaishou"><img src="static/assets/img/companies/kuaishou.png" alt="" width="1571" height="590" loading="lazy" decoding="async"></span>
+    <a class="work-company" href="https://www.kuaishou.com/en" target="_blank" rel="noopener noreferrer" aria-label="Kuaishou Technology — visit English company website (opens in a new tab)">
+      <span class="work-logo"><img src="static/assets/img/companies/kuaishou-en.png" alt="" width="432" height="80" loading="lazy" decoding="async"></span>
       <span class="work-details"><strong>Kuaishou Technology <span class="work-external" aria-hidden="true">↗</span></strong><span class="work-role">Multimodal Large Language Model Algorithm Engineer</span><span class="work-team">Foundation Models &amp; Applications Group</span></span>
       <span class="work-dates">2026–Present</span>
     </a>

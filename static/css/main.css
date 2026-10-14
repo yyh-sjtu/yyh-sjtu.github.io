@@ -189,12 +189,6 @@ section .main-body ol {
     object-fit: contain;
 }
 
-/* Balance the taller Kuaishou artwork against the other horizontal wordmarks. */
-.work-logo-kuaishou img {
-    width: 60px;
-    height: auto;
-}
-
 .work-details > span,
 .work-details > strong {
     display: block;
@@ -278,10 +272,6 @@ section .main-body ol {
         height: 48px;
     }
 
-    .work-logo-kuaishou img {
-        width: 48px;
-        height: auto;
-    }
 }
 
 .open-source-inline {
