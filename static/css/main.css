@@ -81,10 +81,6 @@ section {
     padding: 1rem 0 1.25rem;
 }
 
-#home > .container {
-    max-width: 1160px;
-}
-
 .home-profile-header {
     display: flex;
     align-items: center;
@@ -93,8 +89,9 @@ section {
 }
 
 .home-portrait {
-    width: 64px;
-    height: 80px;
+    width: auto;
+    height: clamp(130px, calc(100vw / 6), 200px);
+    flex-shrink: 0;
     object-fit: cover;
     border-radius: 0.5rem;
     box-shadow: 0 2px 8px #26304e18;
@@ -245,13 +242,13 @@ section {
 @media (max-width: 767px) {
     .home-overview { grid-template-columns: 1fr; gap: 1rem; }
     .home-career { padding-left: 0; }
+    .home-portrait { height: 118px; }
 }
 
 @media (max-width: 575px) {
     #home > .container { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
     #home .home-title-row h2 { font-size: 1.55rem; }
     .home-profile-header { align-items: flex-start; }
-    .home-portrait { width: 48px; height: 60px; }
     .research-section { flex-direction: column; gap: 0.2rem; }
     .home-contact { column-gap: 0.5rem; }
     .contact-divider { display: none; }
