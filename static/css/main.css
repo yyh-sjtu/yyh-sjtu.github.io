@@ -20,7 +20,7 @@
     padding: 0;
     background-position: center 35%;
     background-size: cover;
-    height: 20rem;
+    height: clamp(15rem, 28svh, 20rem);
 }
 
 .top-section h2 {
@@ -70,8 +70,194 @@ section {
 }
 
 #home header {
-    margin-top: -0.7rem;
-    margin-bottom: 0.35rem;
+    margin: 0 0 0.5rem;
+}
+
+#home {
+    padding: 1rem 0 1.25rem;
+}
+
+#home > .container {
+    max-width: 1160px;
+}
+
+.home-profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.home-portrait {
+    width: 64px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px #26304e18;
+}
+
+#home .home-title-row h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+.home-contact {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.2rem 0.65rem;
+    margin-bottom: 1rem;
+    font-size: 0.82rem;
+}
+
+.home-contact > span:first-child {
+    font-weight: 600;
+    color: #535d7c;
+}
+
+.home-contact a {
+    text-decoration: none;
+}
+
+.home-contact a:hover {
+    text-decoration: underline;
+}
+
+.contact-divider { color: #bac0cd; }
+
+.home-overview {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.3fr);
+    gap: 0.6rem 0.75rem;
+}
+
+.home-career {
+    padding-left: 0.75rem;
+}
+
+#home .home-overview h4 {
+    font-family: var(--bs-body-font-family);
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #535d7c;
+    margin-bottom: 0.4rem;
+}
+
+.education-list {
+    padding: 0;
+    list-style: none;
+}
+
+#home .education-list,
+#home .work-experience {
+    margin-bottom: 0;
+}
+
+.education-entry {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.3rem 0;
+    color: #303644;
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+.education-entry img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+.education-entry strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.education-entry strong span { color: #8b93a1; }
+.education-entry:hover strong { color: var(--h-title-color); }
+.education-entry:focus-visible { outline: 2px solid var(--h-title-color); outline-offset: 3px; }
+.education-degree, .education-dates { display: block; font-size: 0.78rem; }
+.education-dates { color: #6b7280; }
+
+.research-section {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem 1rem;
+    padding-top: 0.65rem;
+}
+
+#home .main-body .research-section h4 {
+    flex: none;
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.research-topics {
+    padding: 0;
+    list-style: none;
+}
+
+#home .research-topics { margin: 0; }
+
+.research-topics li {
+    display: inline;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: #6b7280;
+}
+
+.research-topics li:not(:last-child)::after {
+    content: " · ";
+    padding: 0 0.35rem;
+    color: #a3aab8;
+}
+
+.home-career .work-company {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 0.65rem;
+    padding: 0.35rem 0;
+}
+
+.home-career .work-logo { width: 76px; }
+.home-career .work-heading > strong { font-size: 0.88rem; }
+.home-career .work-role { font-size: 0.82rem; }
+.home-career .work-team, .home-career .work-dates { font-size: 0.74rem; }
+
+#home .open-source-inline {
+    margin-top: 0.8rem;
+    padding: 0.65rem 1rem;
+}
+
+@media (max-width: 991px) {
+    .home-overview { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr); }
+    .home-career .work-company { grid-template-columns: 64px minmax(0, 1fr); gap: 0.15rem 0.65rem; }
+    .home-career .work-logo { width: 64px; }
+    .home-career .work-logo img { width: 60px; height: 32px; }
+    .home-career .work-logo-cadence img { width: 80px; height: 48px; }
+}
+
+@media (max-width: 767px) {
+    .home-overview { grid-template-columns: 1fr; gap: 1rem; }
+    .home-career { padding-left: 0; }
+}
+
+@media (max-width: 575px) {
+    #home > .container { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+    #home .home-title-row h2 { font-size: 1.55rem; }
+    .home-profile-header { align-items: flex-start; }
+    .home-portrait { width: 48px; height: 60px; }
+    .research-section { flex-direction: column; gap: 0.2rem; }
+    .home-contact { column-gap: 0.5rem; }
+    .contact-divider { display: none; }
+    .home-contact > span:first-child { flex-basis: 100%; }
+    .home-career .work-company { grid-template-columns: 64px minmax(0, 1fr); }
+    .home-career .work-logo { width: 64px; }
 }
 
 .home-title-row {
@@ -164,10 +350,11 @@ section .main-body ol {
 
 .work-company {
     display: grid;
-    grid-template-columns: 88px minmax(0, 1fr) auto;
+    grid-template-columns: 88px minmax(0, 1fr);
     align-items: center;
     gap: 1.1rem;
-    padding: 0.85rem 0.55rem;
+    padding: 0.5rem 0.55rem;
+    line-height: 1.5;
     border-radius: 0.5rem;
     color: #303644;
     text-decoration: none;
@@ -189,10 +376,17 @@ section .main-body ol {
     object-fit: contain;
 }
 
-.work-details > span,
-.work-details > strong {
+.work-details > span {
     display: block;
 }
+
+.work-details > .work-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+.work-heading > strong { min-width: 0; }
 
 /* The official newsroom image includes generous whitespace around the wordmark. */
 .work-logo-cadence img {
@@ -202,7 +396,7 @@ section .main-body ol {
     mix-blend-mode: multiply;
 }
 
-.work-details > strong {
+.work-heading > strong {
     font-size: 0.95rem;
     font-weight: 600;
 }
@@ -218,8 +412,9 @@ section .main-body ol {
 }
 
 .work-dates {
-    align-self: start;
-    padding-top: 0.15rem;
+    flex: none;
+    margin-left: auto;
+    width: 7.5em;
     white-space: nowrap;
 }
 
@@ -249,22 +444,16 @@ section .main-body ol {
     .work-company {
         grid-template-columns: 64px minmax(0, 1fr);
         gap: 0.2rem 0.8rem;
-        padding: 0.85rem 0;
+        padding: 0.6rem 0;
     }
 
     .work-logo {
         width: 64px;
-        grid-row: span 2;
     }
 
     .work-logo img {
         width: 60px;
         height: 32px;
-    }
-
-    .work-dates {
-        grid-column: 2;
-        padding-top: 0;
     }
 
     .work-logo-cadence img {
@@ -791,34 +980,9 @@ section .main-body ol {
 }
 
 
-#avatar {
-    position: relative;
-    height: 0;
-    top:min(-75px,max(-110px,calc(-1*100vw/11)));
-    max-width: 55em;
-    margin: 0 1.5rem 0 0;
-    float: right;
-    z-index: 9000;
-}
-
-#avatar img {
-    height: max(130px,min(200px,calc(100vw/6)));
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-}
-
 @media screen and (max-width: 991px) {
     .top-section {
-        height: 16rem;
         background-position: center 38%;
-    }
-
-    #avatar {
-        margin: 0;
-        top: -82px;
-    }
-
-    #home header {
-        margin-top: -0.4rem;
     }
 
     .home-title-row {
@@ -830,15 +994,6 @@ section .main-body ol {
     .top-section {
         height: 13rem;
         background-position: center 40%;
-    }
-
-    #avatar {
-        top: -108px;
-        margin-right: 0.4rem;
-    }
-
-    #avatar img {
-        height: 118px;
     }
 
     #blog-list {
