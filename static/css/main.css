@@ -211,33 +211,13 @@ section .main-body ol {
     height: 42px;
 }
 
-/* Show the symbol from each original logo, with the project name alongside it. */
-.open-source-logo-crop {
+/* Standalone vector symbols retain their proportions without cropping. */
+.open-source-mark img {
     display: block;
-    position: relative;
-    width: 32px;
+    width: auto;
+    max-width: 100%;
     height: 42px;
-    overflow: hidden;
-}
-
-.open-source-logo-crop img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 138px;
-    max-width: none;
-    height: 42px;
-}
-
-.open-source-openevolve .open-source-logo-crop {
-    width: 21px;
-}
-
-.open-source-openevolve .open-source-logo-crop img {
-    width: 88px;
-    height: auto;
-    top: -8px;
-    mix-blend-mode: multiply;
+    object-fit: contain;
 }
 
 .open-source-project strong,
