@@ -17,33 +17,20 @@
 
 .top-section {
     position: relative;
-    /* Frame the photo below the fixed navigation so the sky stays visible. */
+    overflow: hidden;
+    isolation: isolate;
     padding: 4.5rem 0 0;
-    background-origin: content-box;
-    background-clip: content-box;
-    background-position: center 64%;
-    background-size: cover;
-    /* Match the reference crop's roughly 7:1 visible panorama. */
-    height: calc(4.5rem + clamp(7rem, 14vw, 17rem));
-}
-
-.top-section h2 {
-    font-weight: 400;
+    background: #17233c;
+    --campus-image: url('../assets/img/campus-extended.jpg');
+    --banner-height: clamp(6rem, 9.4vw, 11rem);
 }
 
 .top-section .top-section-content {
     position: relative;
     z-index: 1;
-}
-
-.top-section:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    height: var(--banner-height);
+    /* The extended photo fills the banner with a continuous, detailed scene. */
+    background: linear-gradient(#0008, #0008), var(--campus-image) center 53% / cover no-repeat;
 }
 
 section header h2{
@@ -997,7 +984,7 @@ section .main-body ol {
 
 @media screen and (max-width: 767px) {
     .top-section {
-        height: 13rem;
+        --banner-height: 6rem;
     }
 
     #blog-list {
