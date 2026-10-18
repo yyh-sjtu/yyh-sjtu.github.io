@@ -184,7 +184,7 @@ const renderBlogPage = async () => {
         viewTitle.textContent = copy.allPosts;
         viewDescription.textContent = copy.allPostsDescription;
 
-        listElement.innerHTML = posts.map(post => `
+        const renderCards = visiblePosts => visiblePosts.map(post => `
             <article class="blog-card">
                 <p class="blog-date">${escapeHtml(formatBlogDate(post.date, language))}</p>
                 <h3><a href="${buildBlogUrl(language, post.slug)}">${escapeHtml(getLocalizedValue(post.title, language))}</a></h3>
@@ -197,24 +197,49 @@ const renderBlogPage = async () => {
                 </div>
             </article>
         `).join('');
+        const filters = document.getElementById('blog-filters');
+        const search = document.getElementById('blog-search');
+        const topic = document.getElementById('blog-topic');
+        const params = new URLSearchParams(location.search);
+        filters.hidden = false;
+        document.getElementById('blog-search-label').textContent = language === 'zh' ? '搜索文章' : 'Search writing';
+        document.getElementById('blog-topic-label').textContent = language === 'zh' ? '主题' : 'Topic';
+        search.placeholder = language === 'zh' ? '标题、摘要或标签…' : 'Title, summary, or tag…';
+        topic.innerHTML = `<option value="all">${language === 'zh' ? '全部主题' : 'All topics'}</option>`
+            + [...new Set(posts.flatMap(post => post.tags || []))].sort()
+                .map(tag => `<option value="${escapeHtml(tag)}">${escapeHtml(tag)}</option>`).join('');
+        search.value = params.get('q') || '';
+        topic.value = [...topic.options].some(option => option.value === params.get('topic')) ? params.get('topic') : 'all';
+        const filterPosts = () => {
+            const query = search.value.trim().toLocaleLowerCase();
+            const filtered = posts.filter(post => {
+                const text = [getLocalizedValue(post.title, language), getLocalizedValue(post.summary, language), ...(post.tags || [])].join(' ').toLocaleLowerCase();
+                return text.includes(query) && (topic.value === 'all' || (post.tags || []).includes(topic.value));
+            });
+            listElement.innerHTML = filtered.length ? renderCards(filtered)
+                : `<p class="empty-state">${language === 'zh' ? '没有匹配的文章，请调整关键词或主题。' : 'No matching posts. Try another keyword or topic.'}</p>`;
+            document.getElementById('blog-result-count').textContent = language === 'zh' ? `${filtered.length} 篇文章` : `${filtered.length} posts`;
+            const url = new URL(location.href);
+            search.value ? url.searchParams.set('q', search.value) : url.searchParams.delete('q');
+            topic.value !== 'all' ? url.searchParams.set('topic', topic.value) : url.searchParams.delete('topic');
+            history.replaceState(null, '', url);
+        };
+        search.addEventListener('input', filterPosts);
+        topic.addEventListener('change', filterPosts);
+        filterPosts();
     } catch (error) {
         console.error(error);
         const language = getCurrentLanguage();
         const copy = blogCopy[language];
         viewTitle.textContent = copy.unavailable;
         viewDescription.textContent = '';
+        listElement.hidden = false;
+        postElement.hidden = true;
         listElement.innerHTML = `<p class="blog-empty">${escapeHtml(copy.unavailableDescription)}</p>`;
     }
 };
 
 window.addEventListener('DOMContentLoaded', () => {
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    document.querySelectorAll('#navbarResponsive .nav-link').forEach(navItem => {
-        navItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') navbarToggler.click();
-        });
-    });
-
     marked.use({ mangle: false, headerIds: false });
     document.querySelectorAll('[data-blog-language]').forEach(button => {
         button.addEventListener('click', () => {
