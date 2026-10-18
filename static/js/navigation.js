@@ -17,4 +17,3 @@ document.addEventListener('keydown', event => {
         menuToggle.focus();
     }
 });
-
