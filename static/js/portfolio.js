@@ -44,3 +44,25 @@ document.getElementById('paper-reset').addEventListener('click', () => {
     paperSearch.focus();
 });
 filterPapers();
+
+const experienceGrid = document.querySelector('.home-overview');
+const experiencePanels = {
+    education: document.querySelector('.home-background'),
+    work: document.querySelector('.home-career'),
+};
+document.getElementById('experience-controls').hidden = false;
+document.querySelectorAll('[data-experience]').forEach(button => {
+    button.addEventListener('click', () => {
+        const view = button.dataset.experience;
+        document.querySelectorAll('[data-experience]').forEach(item => {
+            item.setAttribute('aria-pressed', String(item === button));
+        });
+        Object.entries(experiencePanels).forEach(([key, panel]) => {
+            panel.hidden = view !== 'all' && view !== key;
+        });
+        experienceGrid.classList.toggle('focused-experience', view !== 'all');
+        document.getElementById('experience-status').textContent = view === 'all'
+            ? 'Showing education and work experience.'
+            : view === 'education' ? 'Showing 3 academic experiences.' : 'Showing 3 industry experiences.';
+    });
+});
