@@ -128,6 +128,7 @@ const renderBlogPage = async () => {
     const copy = blogCopy[language];
 
     document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+    document.getElementById('blog-nav-link').href = buildBlogUrl(language);
     document.getElementById('blog-hero-eyebrow').textContent = copy.heroEyebrow;
     document.getElementById('blog-hero-title').textContent = copy.heroTitle;
     document.getElementById('blog-hero-description').textContent = copy.heroDescription;
