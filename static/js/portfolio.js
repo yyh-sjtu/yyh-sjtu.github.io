@@ -47,3 +47,28 @@ document.querySelectorAll('[data-experience]').forEach(button => {
             : view === 'education' ? 'Showing 3 academic experiences.' : 'Showing 3 industry experiences.';
     });
 });
+
+const projectDialog = document.getElementById('project-dialog');
+const projectData = {
+    sglang: {name: 'SGLang', repository: 'https://github.com/sgl-project/sglang'},
+    openevolve: {name: 'OpenEvolve', repository: 'https://github.com/algorithmicsuperintelligence/openevolve'},
+};
+if (typeof projectDialog.showModal === 'function') {
+    document.querySelectorAll('[data-project]').forEach(button => {
+        button.hidden = false;
+        button.addEventListener('click', () => {
+            const project = projectData[button.dataset.project];
+            document.getElementById('project-dialog-title').textContent = project.name;
+            document.getElementById('project-repository').href = project.repository;
+            document.getElementById('project-contributions').href = `${project.repository}/pulls?q=${encodeURIComponent('is:pr author:yyh-sjtu')}`;
+            projectDialog.showModal();
+        });
+    });
+    // Native dialog supplies focus containment, Escape dismissal, and focus return.
+    projectDialog.addEventListener('click', event => {
+        if (event.target !== projectDialog) return;
+        const rect = projectDialog.getBoundingClientRect();
+        if (event.clientX < rect.left || event.clientX > rect.right
+            || event.clientY < rect.top || event.clientY > rect.bottom) projectDialog.close();
+    });
+}
